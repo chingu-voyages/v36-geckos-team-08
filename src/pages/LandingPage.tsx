@@ -1,7 +1,7 @@
 import React from 'react';
 import { Hero } from '../components';
 
-export const LandingPage: React.FC = () => {
+export const LandingPage = () => {
   return (
     <>
       <Hero />
