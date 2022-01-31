@@ -5,7 +5,7 @@ import { LandingPage, ProductPage, ShoppingCart } from '../pages';
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col h-screen">
       <Navigation />
       <Routes>
         <Route path="/" element={<LandingPage />} />
@@ -13,7 +13,7 @@ function App() {
         <Route path="/cart" element={<ShoppingCart />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 

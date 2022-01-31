@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-100 w-full py-8">
-      <div className="max-w-screen-xl mx-auto px-4">
+    <footer className="flex flex-col justify-end h-screen bg-gray-100 w-full py-8 ">
+      <div className="block max-w-screen-xl px-4">
         <ul className="max-w-screen-md mx-auto text-lg font-light flex flex-wrap justify-between">
           <li className="my-2">
             <Link

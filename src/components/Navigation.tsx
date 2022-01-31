@@ -12,8 +12,8 @@ export const Navigation = ({ hasItems }: NavigationProps) => {
   const isHidden = isOpen ? null : 'hidden';
 
   return (
-    <nav className="bg-white shadow">
-      <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
+    <nav className="bg-white shadow ">
+      <div className="container px-6 py-4 mx-auto max-w-6xl md:flex md:justify-between md:items-center">
         <div className="flex items-center justify-between">
           <div>
             <Link
