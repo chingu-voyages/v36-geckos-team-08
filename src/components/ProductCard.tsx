@@ -5,13 +5,13 @@ interface Props {
   id: string;
   image: string;
   type: string;
-  price: number;
+  price: string;
   alt?: string;
 }
 
 export const ProductCard = ({ id, image, type, price, alt }: Props) => {
   return (
-    <div className="flex flex-col  w-[30%] mb-8 hover:-translate-y-2 bg-transparent">
+    <div className="flex flex-col w-[30%] mb-8 hover:-translate-y-2 bg-transparent">
       <Link to={`product/${id}`}>
         <div className="shadow-md">
           <div className="mb-0.5">
