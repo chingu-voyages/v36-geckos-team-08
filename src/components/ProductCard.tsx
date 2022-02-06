@@ -7,6 +7,7 @@ interface Props {
   type: string;
   price: string;
   alt?: string;
+  isLoading?: boolean;
 }
 
 export const ProductCard = ({ id, image, type, price, alt }: Props) => {
