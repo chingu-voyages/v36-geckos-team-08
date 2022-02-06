@@ -1,5 +1,5 @@
 import React, { ReactChild } from 'react';
-import commerce from '../api';
+import commerce from '../api/commerce';
 
 interface CartInterface {
   created: number;

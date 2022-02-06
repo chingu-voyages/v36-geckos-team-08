@@ -1,7 +1,6 @@
-import axios from 'axios';
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import commerce from '../api';
+import commerce from '../api/commerce';
 import { useCart } from '../hooks';
 
 export const ProductPage = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import commerce from '../api';
+import commerce from '../api/commerce';
 
 export const ShopPage = () => {
   const [listOfProducts, setListOfProducts] = React.useState<any>({});

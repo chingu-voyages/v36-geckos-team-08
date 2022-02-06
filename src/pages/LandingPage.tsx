@@ -1,5 +1,5 @@
 import React from 'react';
-import commerce from '../api';
+import commerce from '../api/commerce';
 import { Hero } from '../components';
 import { ProductCard } from '../components';
 
