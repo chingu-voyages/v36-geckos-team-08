@@ -1,21 +1,28 @@
 import React from 'react';
 import commerce from '../api';
 import { Hero } from '../components';
-import { ProductCard } from '../components/ProductCard';
+import { ProductCard } from '../components';
 
 export const LandingPage = () => {
   const [products, setProducts] = React.useState<any[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
-    commerce.products
-      .list({
-        category_slug: ['top-rated']
-      })
-      .then((res) => {
+    const getProducts = async () => {
+      try {
+        const response = await commerce.products.list({
+          category_slug: ['top-rated']
+        });
         setIsLoading(false);
-        setProducts(res.data);
-      });
+        setProducts(response.data);
+      } catch (error) {
+        console.log(
+          'There was an error getting the product information',
+          error
+        );
+      }
+    };
+    getProducts();
   }, []);
 
   return (

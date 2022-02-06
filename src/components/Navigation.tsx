@@ -1,19 +1,18 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../hooks';
 
-interface NavigationProps {
-  hasItems?: boolean;
-  children?: React.ReactNode;
-}
-
-export const Navigation = ({ hasItems }: NavigationProps) => {
+export const Navigation = () => {
+  const { cart }: any = useCart();
   const [isOpen, setIsOpen] = React.useState(false);
   const handleClick = () => setIsOpen(!isOpen);
   const isHidden = isOpen ? null : 'hidden';
 
+  const hasItems: boolean = cart?.total_unique_items > 0;
+
   return (
     <nav className="bg-white shadow ">
-      <div className="container px-6 py-4 mx-auto max-w-6xl md:flex md:justify-between md:items-center">
+      <div className="px-6 py-4 mx-auto max-w-6xl md:flex md:justify-between md:items-center">
         <div className="flex items-center justify-between">
           <div>
             <Link
