@@ -1,21 +1,23 @@
-import { Field, Form, Formik } from "formik";
-import React from "react";
+import { Field, Form, Formik } from 'formik';
+import React from 'react';
 
-export const CheckoutForm = () => {
+export const ShippingForm = () => {
+  const initialValues = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    address: '',
+    stateProvince: '',
+    city: '',
+    zipPostalCode: '',
+    phone: '',
+    sameBillingAddress: false
+  };
+
   return (
-    <div className="flex">
+    <div>
       <Formik
-        initialValues={{
-          firstName: "",
-          lastName: "",
-          email: "",
-          address: "",
-          stateProvince: "",
-          city: "",
-          zipPostalCode: "",
-          phone: "",
-          sameBillingAddress: false,
-        }}
+        initialValues={initialValues}
         onSubmit={(values) => {
           console.log({ values });
         }}
@@ -121,7 +123,7 @@ export const CheckoutForm = () => {
               name="sameBillingAddress"
               type="checkbox"
             />
-            <label htmlFor="sameBillingAddress">
+            <label htmlFor="sameBillingAddress" className="text-sm pl-1">
               My billing and shipping address are the same
             </label>
           </div>
