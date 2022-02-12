@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
 import { Footer, Navigation } from '../components';
 import { CartProvider } from '../hooks';
-import { LandingPage, ProductPage, ShopPage, ShoppingCart } from '../pages';
+import { LandingPage, ProductPage, ShoppingCart } from '../pages';
 import { Checkout } from './Checkout';
 
 function Layout() {
@@ -22,10 +22,7 @@ function App() {
         <Routes>
           <Route path="" element={<Layout />}>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/shop" element={<ShopPage />} />
-            <Route path="/cart" element={<ShoppingCart />}>
-              <Route index element={<>aa</>} />
-            </Route>
+            <Route path="/cart" element={<ShoppingCart />} />
             <Route path="/product/:id" element={<ProductPage />} />
           </Route>
           <Route path="/checkout" element={<Checkout />} />

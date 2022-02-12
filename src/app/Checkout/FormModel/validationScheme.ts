@@ -1,5 +1,4 @@
 import * as Yup from 'yup';
-import moment from 'moment';
 import { checkoutFormModel } from './checkoutFormModel';
 const { contact, shipping, payment } = checkoutFormModel.formFields;
 
@@ -79,18 +78,7 @@ export const validationScheme = Yup.object().shape({
     .matches(visaRegEx, payment.cardNumber.invalidErrorMsg),
   [payment.expiryDate.name]: Yup.string()
     .nullable()
-    .required(`${payment.expiryDate.requiredErrorMsg}`)
-    .test('expDate', payment.expiryDate.invalidErrorMsg, (val) => {
-      if (val) {
-        const startDate = new Date();
-        const endDate = new Date(2050, 12, 31);
-        if (moment(val, moment.ISO_8601).isValid()) {
-          return moment(val).isBetween(startDate, endDate);
-        }
-        return false;
-      }
-      return false;
-    }),
+    .required(`${payment.expiryDate.requiredErrorMsg}`),
   [payment.cvv.name]: Yup.string()
     .required(`${payment.cvv.requiredErrorMsg}`)
     .test(

@@ -50,12 +50,6 @@ export const Navigation = () => {
             >
               Home
             </Link>
-            <Link
-              to="/shop"
-              className="my-1 text-sm font-medium transition-colors duration-200 transform text-black hover:text-gray-300 md:mx-4 md:my-0"
-            >
-              Shop
-            </Link>
           </div>
 
           <div className="flex justify-center md:block">
