@@ -11,7 +11,7 @@ export const Navigation = () => {
   const hasItems: boolean = cart?.total_unique_items > 0;
 
   return (
-    <nav className="bg-white shadow ">
+    <nav className="bg-white shadow">
       <div className="px-6 py-4 mx-auto max-w-6xl md:flex md:justify-between md:items-center">
         <div className="flex items-center justify-between">
           <div>
@@ -49,12 +49,6 @@ export const Navigation = () => {
               className="my-1 text-sm font-medium transition-colors duration-200 transform text-black hover:text-gray-300 md:mx-4 md:my-0"
             >
               Home
-            </Link>
-            <Link
-              to="/shop"
-              className="my-1 text-sm font-medium transition-colors duration-200 transform text-black hover:text-gray-300 md:mx-4 md:my-0"
-            >
-              Shop
             </Link>
           </div>
 

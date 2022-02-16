@@ -29,7 +29,7 @@ export const CartItem = (props: ICartItem) => {
   };
 
   return (
-    <div className="mb-12 max-h-28 md:max-h-48 flex justify-between ">
+    <div className="mb-12 max-h-28 md:max-h-48 flex justify-between">
       <div className="w-1/6 mr-4">
         <img
           src={props.image}
@@ -37,11 +37,11 @@ export const CartItem = (props: ICartItem) => {
           className="w-full h-32 object-contain"
         />
       </div>
-      <div className="w-5/6 h-full flex flex-col px-0 justify-between">
+      <div className="w-5/6 flex flex-col px-0 justify-between">
         <span className="text-xl font-bold flex-start">{props.name}</span>
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           <div className="flex flex-col">
-            <span className="text-md font-semibold flex items-center mb-1">
+            <span className="text-md font-semibold flex items-center mb-1 ">
               <span className="pr-1">Quantity:</span>
               <CustomNumberInput
                 handleIncrement={handleIncrement}

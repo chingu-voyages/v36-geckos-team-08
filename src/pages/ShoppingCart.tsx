@@ -5,16 +5,17 @@ import { useCart } from '../hooks';
 
 export const ShoppingCart = () => {
   const { cart, deleteItem, isLoading, updateQuantity }: any = useCart();
+  const isDisabled = cart?.line_items?.length === 0;
 
   return (
-    <div className="h-screen flex flex-col items-center ">
+    <div className="h-screen flex flex-col items-center">
       <div className="w-full max-w-6xl mx-auto px-6 ">
         <h1 className="text-4xl font-semibold mt-12 pb-6 border-b-2 border-gray-500">
           Shopping Cart
         </h1>
         <h2 className="text-md my-6 mb-12 font-semibold">
           Not ready to checkout?
-          <Link to="/shop" className="cursor-pointer pl-1 underline">
+          <Link to="/" className="cursor-pointer pl-1 underline">
             Continue Shopping
           </Link>
         </h2>
@@ -45,9 +46,14 @@ export const ShoppingCart = () => {
                     {cart?.subtotal.formatted_with_symbol}
                   </span>
                 </span>
-                <button className="p-2 px-6 bg-gray-300 text-xl md:text-md rounded-md hover:bg-gray-400 hover:text-white">
+                <Link
+                  to="/checkout"
+                  className={`p-2 px-6 bg-gray-300 text-xl md:text-md rounded-md hover:bg-gray-400 hover:text-white  ${
+                    isDisabled && 'pointer-events-none'
+                  }`}
+                >
                   Checkout
-                </button>
+                </Link>
               </div>
             </>
           )}

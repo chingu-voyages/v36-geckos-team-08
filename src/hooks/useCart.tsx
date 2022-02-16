@@ -10,10 +10,10 @@ interface CartInterface {
   id: string;
   meta: null;
   subtotal: {
-    raw: 0;
-    formatted: '0.00';
-    formatted_with_symbol: '$0.00';
-    formatted_with_code: '0.00 USD';
+    raw: number;
+    formatted: string;
+    formatted_with_symbol: string;
+    formatted_with_code: string;
   };
   total_items: number;
   total_unique_items: number;
@@ -24,7 +24,7 @@ interface CartInterface {
 }
 
 interface CartContextInterface {
-  cart: CartInterface | {};
+  cart: CartInterface | any;
   addToCart: (productId: string) => void;
   deleteItem: (itemId: string) => void;
   updateQuantity: (itemId: string, newQuantity: number) => void;
